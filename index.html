@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <title>Spurgunimesi!</title>
@@ -7,32 +7,75 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128069179-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-128069179-1');
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <style>
+        body {
+            margin-top: 2em;
+        }
+
+        .disclaimer {
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-Hei!
+<div class="ui container">
+    <div class="ui one column stackable grid">
+        <div class="ui column">
+            <h3 class="ui header">Hei!</h3>
+        </div>
+        <div class="ui column">
+            Tervetuloa Spurgunimesi.fi generaattoriin! Tässä voit generoida IHAN törkeen siistin spurgunimesi!
+            Syötä vain tiedot alle.
+        </div>
+    </div>
 
-Tervetuloa Spurgunimesi.fi generaattoriin! Tässä voit generoida IHAN törkeen siistin spurgunimesi! Syötä vain tiedot alle.
+    <div class="ui two column stackable grid">
+        <div class="ui column">
+            <form class="ui form">
+                <div class="field">
+                    <label for="etunimi">Etunimi:</label>
+                    <input type="text" placeholder="etunimi" id="etunimi"><br/>
+                </div>
+                <div class="field">
+                    <label for="sukunimi">Sukunimi:</label>
+                    <input type="text" placeholder="sukunimi" id="sukunimi"><br/>
+                </div>
+                <button class="ui button" type="button" onclick="generateSpurguNimi()">Generoi spurgunimesi!</button>
+            </form>
+        </div>
+    </div>
+    <div class="ui one column stacable grid">
+        <div class="ui column">
+            <h3 id="spurgunimesi"></h3>
+        </div>
+    </div>
 
-<p>
-    Etunimi: <input type="text" placeholder="etunimi" id="etunimi"><br />
-    Sukunimi: <input type="text" placeholder="sukunimi" id="sukunimi"><br />
-    <button type="button" onclick="generateSpurguNimi()">Generoi spurgunimesi!</button>
-</p>
-<p id="spurgunimesi"></p>
+    <div class="ui one column stackable grid disclaimer">
+        <div class="ui column">
+            Thanks to Jugi for the idea for this! If you want to make this prettier you
+            are welcome to do a PR in <a href="https://github.com/stoneman1/spurgunimesi">https://github.com/stoneman1/spurgunimesi</a>
+        </div>
+        <div class="ui column">
+            We use Google analytics to see how many visitors we get
+        </div>
+    </div>
 
-
-
-<p style="position: fixed; bottom: 0;">Thanks to Jugi for the idea for this! If you want to make this prettier you are welcome to do a PR in <a href="https://github.com/stoneman1/spurgunimesi">https://github.com/stoneman1/spurgunimesi</a>. <br />We use Google analytics to see how many visitors we get.</p>
-
-<script>
-function generateSpurguNimi() {
-    document.getElementById("spurgunimesi").innerText = "Spurgunimesi on " + document.getElementById("etunimi").value + " " + document.getElementById("sukunimi").value + "\nit's funny because it's true"
-}
-</script>
+    <script>
+        function generateSpurguNimi() {
+            document.getElementById("spurgunimesi").innerText = "Spurgunimesi on " + document.getElementById("etunimi").value + " " + document.getElementById("sukunimi").value + "\nIt's funny because it's true"
+        }
+    </script>
+</div>
 </body>
 </html>
