@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spurgunimesi!</title>
+</head>
+<body>
+Hei!
+
+Tervetuloa Spurgunimesi.fi generaattoriin! Tässä voit generoida IHAN törkeen siistin spurgunimesi! Syötä vain tiedot alle.
+
+<p>
+    Etunimi: <input type="text" placeholder="etunimi" id="etunimi"><br />
+    Sukunimi: <input type="text" placeholder="sukunimi" id="sukunimi"><br />
+    <button type="button" onclick="generateSpurguNimi()">Generoi spurgunimesi!</button>
+</p>
+<p id="spurgunimesi"></p>
+
+<script>
+function generateSpurguNimi() {
+    document.getElementById("spurgunimesi").innerText = "Spurgunimesi on " + document.getElementById("etunimi").value + " " + document.getElementById("sukunimi").value
+}
+</script>
+</body>
+</html>
