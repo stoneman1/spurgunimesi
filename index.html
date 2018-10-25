@@ -42,7 +42,7 @@
 
     <div class="ui two column stackable grid">
         <div class="ui column">
-            <form class="ui form">
+            <form class="ui form" onsubmit="generateSpurguNimi(event)">
                 <div class="field">
                     <label for="etunimi">Etunimi:</label>
                     <input type="text" placeholder="etunimi" id="etunimi"><br/>
@@ -51,7 +51,7 @@
                     <label for="sukunimi">Sukunimi:</label>
                     <input type="text" placeholder="sukunimi" id="sukunimi"><br/>
                 </div>
-                <button class="ui button" type="button" onclick="generateSpurguNimi()">Generoi spurgunimesi!</button>
+                <button class="ui button" type="submit" >Generoi spurgunimesi!</button>
             </form>
         </div>
     </div>
@@ -72,7 +72,9 @@
     </div>
 
     <script>
-        function generateSpurguNimi() {
+
+        function generateSpurguNimi(event) {
+            event.preventDefault();
             document.getElementById("spurgunimesi").innerText = "Spurgunimesi on " + document.getElementById("etunimi").value + " " + document.getElementById("sukunimi").value + "\nIt's funny because it's true"
         }
     </script>
